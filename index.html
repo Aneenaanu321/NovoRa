@@ -59,7 +59,7 @@ a{color:var(--teal-ink)}
 .eyebrow::before{content:"";width:22px;height:2px;background:currentColor;border-radius:2px}
 section{padding-block:112px}
 @media (max-width:700px){section{padding-block:72px}}
-.sec-head{display:flex;flex-direction:column;gap:16px;max-width:680px;margin-bottom:56px}
+.sec-head{display:flex;flex-direction:column;gap:16px;margin-bottom:56px}
 .sec-head.center{margin-inline:auto;text-align:center;align-items:center}
 .sec-head h2{font-size:clamp(30px,4vw,46px);font-weight:800}
 .sec-head p{color:var(--muted);font-size:18.5px}
@@ -135,13 +135,6 @@ header.open .menu-btn svg .x{display:block}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 @media (prefers-reduced-motion: reduce){.float{animation:none}}
 @media (max-width:900px){.hero{padding-block:56px 84px}.hero .wrap{grid-template-columns:1fr;gap:48px}.hero-art{max-width:600px}}
-
-/* stack strip */
-.strip{background:var(--bg);border-bottom:1px solid var(--line)}
-.strip .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:16px 40px;padding-block:30px;justify-content:space-between}
-.strip small{font-size:12.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--subtle)}
-.strip ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
-.strip li{font-weight:700;color:var(--muted);font-size:14.5px;padding:7px 14px;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
 
 /* services */
 .svc-group{margin-top:64px}
@@ -261,6 +254,23 @@ footer{background:var(--navy);color:var(--on-navy-muted);padding-block:72px 28px
 .foot ul a:hover{color:var(--on-navy)}
 .legal{margin-top:56px;padding-top:22px;border-top:1px solid var(--navy-line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:13.5px}
 
+/* WhatsApp region chooser */
+.wa-dlg{border:0;padding:0;background:transparent;max-width:min(440px,calc(100vw - 32px));width:100%;color:var(--ink)}
+.wa-dlg::backdrop{background:rgba(7,15,39,.6);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.wa-card{position:relative;background:var(--bg);border:1px solid var(--line);border-radius:24px;padding:32px 28px 28px;box-shadow:var(--shadow-lg);display:flex;flex-direction:column;gap:8px}
+.wa-card h3{font-size:22px;font-weight:800;padding-right:36px}
+.wa-card>p{color:var(--muted);font-size:15.5px;margin-bottom:12px}
+.wa-close{position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:10px;border:0;background:var(--surface);color:var(--muted);cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
+.wa-close:hover{color:var(--ink);background:var(--surface-2)}
+.wa-opt{display:flex;align-items:center;gap:16px;padding:16px 18px;border:1.5px solid var(--line);border-radius:16px;text-decoration:none;color:var(--ink);transition:border-color .15s ease,background-color .15s ease,transform .15s ease}
+.wa-opt+.wa-opt{margin-top:4px}
+.wa-opt:hover{border-color:var(--teal);background:var(--teal-soft);transform:translateY(-1px)}
+.wa-opt svg.flag{width:44px;height:30px;border-radius:6px;flex-shrink:0;box-shadow:0 0 0 1px rgba(15,30,69,.12)}
+.wa-opt strong{display:block;font-size:17px}
+.wa-opt small{display:block;color:var(--muted);font-size:14px;font-weight:500}
+.wa-opt .go{margin-left:auto;color:var(--teal-ink);flex-shrink:0}
+@media (prefers-reduced-motion: reduce){.wa-opt{transition:none}.wa-opt:hover{transform:none}}
+
 /* scroll reveal (only when JS runs) */
 .js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
 .js .rv.in{opacity:1;transform:none}
@@ -349,13 +359,6 @@ footer{background:var(--navy);color:var(--on-navy-muted);padding-block:72px 28px
     </div>
   </div>
 </section>
-
-<div class="strip">
-  <div class="wrap">
-    <small>Built with modern tools</small>
-    <ul><li>React</li><li>Node.js</li><li>TypeScript</li><li>Express</li><li>MongoDB</li><li>SQL</li><li>GraphQL</li><li>AWS</li></ul>
-  </div>
-</div>
 
 <section id="services">
   <div class="wrap">
@@ -449,8 +452,7 @@ footer{background:var(--navy);color:var(--on-navy-muted);padding-block:72px 28px
         <div class="contact">
           <p>Prefer to chat?<small>Message our India or UAE team on WhatsApp.</small></p>
           <div class="row">
-            <a class="btn btn-wa btn-sm" href="https://wa.me/919746426444" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.3z"></path></svg>WhatsApp India</a>
-            <a class="btn btn-wa btn-sm" href="https://wa.me/971505699693" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.3z"></path></svg>WhatsApp UAE</a>
+            <a class="btn btn-wa btn-sm" data-wa href="https://wa.me/919746426444" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.3z"></path></svg>Chat on WhatsApp</a>
           </div>
         </div>
       </div>
@@ -491,7 +493,7 @@ footer{background:var(--navy);color:var(--on-navy-muted);padding-block:72px 28px
     <div class="sec-head rv">
       <span class="eyebrow">FAQ</span>
       <h2>Frequently asked questions</h2>
-      <p>Can't find your answer? <a href="https://wa.me/919746426444" target="_blank" rel="noopener">Message us on WhatsApp</a>.</p>
+      <p>Can't find your answer? <a data-wa href="https://wa.me/919746426444" target="_blank" rel="noopener">Message us on WhatsApp</a>.</p>
     </div>
     <div class="faq-list">
       <details class="rv"><summary>How much does a website cost?</summary><p>It depends on the number of pages and features. Share your requirements and we'll send a clear quote before any work starts.</p></details>
@@ -509,7 +511,7 @@ footer{background:var(--navy);color:var(--on-navy-muted);padding-block:72px 28px
       <div class="about">
         <a class="brand" href="#top" aria-label="NovoRa home"><span class="wm">NovoRa<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C13 7.5 16.5 11 24 12C16.5 13 13 16.5 12 24C11 16.5 7.5 13 0 12C7.5 11 11 7.5 12 0Z" fill="#4FD9CB"></path></svg></span></a>
         <p>A digital studio for websites, web apps, design and social media. Design. Build. Grow.</p>
-        <a class="btn btn-wa btn-sm" href="https://wa.me/919746426444" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.3z"></path></svg>WhatsApp Us</a>
+        <a class="btn btn-wa btn-sm" data-wa href="https://wa.me/919746426444" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.3z"></path></svg>WhatsApp Us</a>
       </div>
       <div>
         <h4>Services</h4>
@@ -521,15 +523,45 @@ footer{background:var(--navy);color:var(--on-navy-muted);padding-block:72px 28px
       </div>
       <div>
         <h4>Contact</h4>
-        <ul><li><a href="https://wa.me/919746426444" target="_blank" rel="noopener">WhatsApp India</a></li><li><a href="https://wa.me/971505699693" target="_blank" rel="noopener">WhatsApp UAE</a></li><li><a href="#quote">Request a quote</a></li></ul>
+        <ul><li><a data-wa href="https://wa.me/919746426444" target="_blank" rel="noopener">Chat on WhatsApp</a></li><li><a href="#quote">Request a quote</a></li><li><span>India &amp; UAE</span></li></ul>
       </div>
     </div>
     <div class="legal"><span>© 2026 NovoRa · A NovoLearn company. All rights reserved.</span><span>Design. Build. Grow.</span></div>
   </div>
 </footer>
 
+<dialog class="wa-dlg" id="waDlg" aria-labelledby="waTitle">
+  <div class="wa-card">
+    <button class="wa-close" type="button" id="waClose" aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+    <h3 id="waTitle">Chat with us on WhatsApp</h3>
+    <p>Where are you contacting us from?</p>
+    <a class="wa-opt" href="https://wa.me/919746426444" target="_blank" rel="noopener">
+      <svg class="flag" viewBox="0 0 45 30" aria-hidden="true"><rect width="45" height="10" fill="#FF9933"></rect><rect y="10" width="45" height="10" fill="#FFFFFF"></rect><rect y="20" width="45" height="10" fill="#138808"></rect><circle cx="22.5" cy="15" r="3.6" fill="none" stroke="#000080" stroke-width="1"></circle><circle cx="22.5" cy="15" r=".8" fill="#000080"></circle></svg>
+      <span><strong>India</strong><small>Message our India team</small></span>
+      <svg class="go" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+    </a>
+    <a class="wa-opt" href="https://wa.me/971505699693" target="_blank" rel="noopener">
+      <svg class="flag" viewBox="0 0 45 30" aria-hidden="true"><rect width="45" height="10" fill="#00732F"></rect><rect y="10" width="45" height="10" fill="#FFFFFF"></rect><rect y="20" width="45" height="10" fill="#000000"></rect><rect width="12" height="30" fill="#FF0000"></rect></svg>
+      <span><strong>UAE</strong><small>Message our UAE team</small></span>
+      <svg class="go" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+    </a>
+  </div>
+</dialog>
+
 <script>
 (function(){
+  // WhatsApp links: ask India or UAE first, then open that chat
+  var dlg=document.getElementById('waDlg');
+  if(dlg&&typeof dlg.showModal==='function'){
+    document.addEventListener('click',function(e){
+      var a=e.target.closest('[data-wa]');
+      if(!a)return;
+      e.preventDefault();dlg.showModal();
+    });
+    document.getElementById('waClose').addEventListener('click',function(){dlg.close();});
+    dlg.addEventListener('click',function(e){if(e.target===dlg||e.target.closest('.wa-opt'))dlg.close();});
+  }
+
   // quote form -> WhatsApp message
   var form=document.getElementById('qForm'), err=document.getElementById('qErr'), done=document.getElementById('qDone'), link=document.getElementById('qLink');
   var v=function(id){return document.getElementById(id).value.trim();};
