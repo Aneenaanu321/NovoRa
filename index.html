@@ -109,32 +109,55 @@ header.open .menu-btn svg .x{display:block}
 }
 
 /* hero */
-.hero{position:relative;background:var(--navy);color:var(--on-navy);padding-block:84px 120px;overflow:hidden;isolation:isolate}
+.hero{position:relative;background:var(--navy);color:var(--on-navy);padding-block:72px 104px;overflow:hidden;isolation:isolate;display:flex;align-items:center;min-height:min(860px,calc(100svh - 76px))}
+.hero>.wrap{width:100%}
 .hero::before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse 80% 70% at 60% 40%,#000 30%,transparent 80%);mask-image:radial-gradient(ellipse 80% 70% at 60% 40%,#000 30%,transparent 80%)}
 .hero::after{content:"";position:absolute;z-index:-1;inset:-20% -10% auto auto;width:780px;height:780px;border-radius:50%;background:radial-gradient(circle,rgba(19,181,166,.28),transparent 62%);pointer-events:none}
 .hero .glow2{position:absolute;z-index:-1;left:-220px;bottom:-320px;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(255,138,61,.16),transparent 62%);pointer-events:none}
-.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:64px;align-items:center}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:56px;align-items:center}
+@media (min-width:901px){.hero-art{margin-right:-40px}}
 .hero-text{display:flex;flex-direction:column;gap:28px;min-width:0}
 .pill{align-self:flex-start;display:inline-flex;align-items:center;gap:10px;padding:7px 16px 7px 12px;border:1px solid var(--navy-line);background:rgba(255,255,255,.04);border-radius:999px;font-size:13.5px;font-weight:700;color:var(--on-navy-muted)}
 .pill b{position:relative;width:8px;height:8px;border-radius:999px;background:var(--teal-bright)}
 .pill b::after{content:"";position:absolute;inset:-4px;border-radius:999px;border:2px solid var(--teal-bright);opacity:.5;animation:ping 2.2s ease-out infinite}
 @keyframes ping{0%{transform:scale(.6);opacity:.6}100%{transform:scale(1.8);opacity:0}}
 @media (prefers-reduced-motion: reduce){.pill b::after{animation:none;display:none}}
-.hero h1{font-size:clamp(44px,6.4vw,78px);font-weight:800;letter-spacing:-.035em;line-height:1.02}
-.hero h1 .t{color:var(--teal-bright)} .hero h1 .o{color:var(--orange)}
-.hero .lead{font-size:19.5px;color:var(--on-navy-muted);max-width:530px}
+.hero h1{font-size:clamp(46px,6.6vw,84px);font-weight:800;letter-spacing:-.04em;line-height:1}
+.hero h1 .t{background:linear-gradient(100deg,#4FD9CB 0%,#13B5A6 35%,#9BF3EA 50%,#13B5A6 65%,#4FD9CB 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s ease-in-out infinite}
+@keyframes shine{0%,100%{background-position:100% 0}50%{background-position:0 0}}
+.hero h1 .o{position:relative;color:var(--orange);display:inline-block}
+.hero h1 .o::after{content:"";position:absolute;left:2%;right:-4%;bottom:-.12em;height:.22em;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20' preserveAspectRatio='none'%3E%3Cpath d='M3 14C50 5 120 3 197 9' fill='none' stroke='%23FF8A3D' stroke-width='5' stroke-linecap='round' opacity='.55'/%3E%3C/svg%3E") center/100% 100% no-repeat}
+.hero .lead{font-size:clamp(17.5px,1.5vw,20px);color:var(--on-navy-muted);max-width:540px}
+.hero .lead strong{color:var(--on-navy);font-weight:700}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px}
-.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding-top:28px;border-top:1px solid var(--navy-line)}
-.stats div{display:flex;flex-direction:column;gap:2px;min-width:0}
-.stats strong{font-size:26px;font-weight:800;letter-spacing:-.02em;color:var(--on-navy);line-height:1.2}
-.stats span{font-size:14px;color:var(--on-navy-muted);font-weight:500}
-@media (max-width:440px){.stats strong{font-size:21px}.stats span{font-size:13px}}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:6px}
+.stats div{display:flex;flex-direction:column;gap:2px;min-width:0;padding:16px 18px;border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.025));border:1px solid rgba(255,255,255,.09)}
+.stats strong{font-size:28px;font-weight:800;letter-spacing:-.02em;color:var(--on-navy);line-height:1.15}
+.stats strong em{font-style:normal;color:var(--teal-bright)}
+.stats span{font-size:13.5px;color:var(--on-navy-muted);font-weight:500;line-height:1.4}
+@media (max-width:440px){.stats{gap:8px}.stats div{padding:12px}.stats strong{font-size:22px}.stats span{font-size:12.5px}}
 .hero-art{min-width:0;position:relative}
-.hero-art svg{width:100%;height:auto;display:block}
+.hero-art>svg{width:100%;height:auto;display:block}
 .float{animation:float 7s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-@media (prefers-reduced-motion: reduce){.float{animation:none}}
-@media (max-width:900px){.hero{padding-block:56px 84px}.hero .wrap{grid-template-columns:1fr;gap:48px}.hero-art{max-width:600px}}
+.tag{position:absolute;z-index:1;display:flex;align-items:center;gap:10px;padding:10px 16px 10px 10px;border-radius:14px;background:rgba(255,255,255,.96);color:#0F1E45;font-size:13.5px;font-weight:700;line-height:1.3;box-shadow:0 18px 40px -16px rgba(0,0,0,.55);white-space:nowrap;animation:float 6s ease-in-out infinite}
+.tag small{display:block;font-size:12px;font-weight:500;color:#5A6683}
+.tag i{width:34px;height:34px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.tag-1{left:10%;bottom:-16%;animation-delay:-2s}
+.tag-1 i{background:#E6F6F4;color:#0A7A70}
+.tag-2{right:12%;top:-9%;animation-delay:-4s}
+.tag-2 i{background:#FFF1E7;color:#D9661C}
+@media (max-width:560px){.tag{font-size:12px;padding:7px 12px 7px 7px;gap:8px}.tag small{display:none}.tag i{width:26px;height:26px;border-radius:8px}.tag i svg{width:15px;height:15px}.tag-1{left:4%;bottom:-18%}.tag-2{right:2%;top:-12%}}
+/* hero entrance */
+.hero-text>*,.hero-art{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero-text>:nth-child(2){animation-delay:.08s}
+.hero-text>:nth-child(3){animation-delay:.16s}
+.hero-text>:nth-child(4){animation-delay:.24s}
+.hero-text>:nth-child(5){animation-delay:.32s}
+.hero-art{animation-delay:.2s}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.float,.tag,.hero h1 .t,.hero-text>*,.hero-art{animation:none}}
+@media (max-width:900px){.hero{padding-block:48px 88px;min-height:0}.hero .wrap{grid-template-columns:1fr;gap:64px}.hero-art{max-width:600px}}
 
 /* services */
 .svc-group{margin-top:64px}
@@ -305,20 +328,22 @@ footer{background:var(--navy);color:var(--on-navy-muted);padding-block:72px 28px
     <div class="hero-text">
       <span class="pill"><b></b>A NovoLearn company · Digital studio</span>
       <h1><span class="t">Design.</span> Build.<br><span class="o">Grow.</span></h1>
-      <p class="lead">Websites, web apps, UI/UX, branding and social media for businesses, startups and professionals. One team from first idea to launch and beyond.</p>
+      <p class="lead">Websites, web apps, UI/UX, branding and social media for businesses, startups and professionals. <strong>One team from first idea to launch and beyond.</strong></p>
       <div class="cta-row">
         <a class="btn btn-orange" href="#quote">Get a FREE Quote
           <svg class="arr" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
         <a class="btn btn-line" href="#services">View Services</a>
       </div>
       <div class="stats">
-        <div><strong>12+</strong><span>Digital services</span></div>
-        <div><strong>India &amp; UAE</strong><span>Clients served online</span></div>
-        <div><strong>1 team</strong><span>Idea to launch</span></div>
+        <div><strong>12<em>+</em></strong><span>Digital services</span></div>
+        <div><strong>3</strong><span>Countries: India, UAE &amp; Qatar</span></div>
+        <div><strong>1</strong><span>Team, idea to launch</span></div>
       </div>
     </div>
-    <div class="hero-art float">
-<svg viewBox="0 0 968 400" role="img" aria-label="A laptop showing a website layout and a phone showing a social media post">
+    <div class="hero-art">
+      <span class="tag tag-2"><i><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2.5"></rect><path d="M11 18h2"></path></svg></i><span>Mobile-friendly<small>Looks great on every screen</small></span></span>
+      <span class="tag tag-1"><i><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.3z"></path></svg></i><span>Updates on WhatsApp<small>Support after launch</small></span></span>
+<svg class="float" viewBox="0 0 968 400" role="img" aria-label="A laptop showing a website layout and a phone showing a social media post">
 <defs><filter id="sh" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000000" flood-opacity="0.25"></feDropShadow></filter></defs>
 <circle cx="470" cy="206" r="232" fill="none" stroke="#2A3F78" stroke-width="2" stroke-dasharray="4 10"></circle>
 <circle cx="470" cy="206" r="198" fill="#1C3166"></circle>
@@ -450,7 +475,7 @@ footer{background:var(--navy);color:var(--on-navy-muted);padding-block:72px 28px
           <li><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#13B5A6"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Packages for every budget</li>
         </ul>
         <div class="contact">
-          <p>Prefer to chat?<small>Message our India or UAE team on WhatsApp, or send us an email.</small></p>
+          <p>Prefer to chat?<small>Message our India, UAE or Qatar team on WhatsApp, or send us an email.</small></p>
           <div class="row">
             <a class="btn btn-wa btn-sm" data-wa href="https://wa.me/919746426444" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.3z"></path></svg>Chat on WhatsApp</a>
             <a class="btn btn-line btn-sm" href="mailto:novogroupofcompany@gmail.com"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3.5 6.5l8.5 6.5 8.5-6.5"></path></svg>Email us</a>
@@ -465,7 +490,7 @@ footer{background:var(--navy);color:var(--on-navy-muted);padding-block:72px 28px
         </div>
         <div class="row2">
           <div class="field"><label for="q-biz">Business name <span>(optional)</span></label><input id="q-biz" name="biz" autocomplete="organization" placeholder="Company or brand"></div>
-          <div class="field"><label for="q-country">Country</label><select id="q-country" name="country"><option>India</option><option>UAE</option><option>Other</option></select></div>
+          <div class="field"><label for="q-country">Country</label><select id="q-country" name="country"><option>India</option><option>UAE</option><option>Qatar</option><option>Other</option></select></div>
         </div>
         <div class="field"><label for="q-svc">Service needed</label>
           <select id="q-svc" name="svc" required>
@@ -498,7 +523,7 @@ footer{background:var(--navy);color:var(--on-navy-muted);padding-block:72px 28px
     </div>
     <div class="faq-list">
       <details class="rv"><summary>How much does a website cost?</summary><p>It depends on the number of pages and features. Share your requirements and we'll send a clear quote before any work starts.</p></details>
-      <details class="rv"><summary>Do you work with clients outside India?</summary><p>Yes. We work with clients in India, the UAE and other countries, fully online.</p></details>
+      <details class="rv"><summary>Do you work with clients outside India?</summary><p>Yes. We work with clients in India, the UAE, Qatar and other countries, fully online.</p></details>
       <details class="rv"><summary>Can I get design, website and social media together?</summary><p>Yes. Many clients combine services into one package, such as logo, website and social media handling.</p></details>
       <details class="rv"><summary>Will you help after the website goes live?</summary><p>Yes. We offer hosting, maintenance and update support so your site stays secure and current.</p></details>
     </div>
@@ -524,7 +549,7 @@ footer{background:var(--navy);color:var(--on-navy-muted);padding-block:72px 28px
       </div>
       <div>
         <h4>Contact</h4>
-        <ul><li><a data-wa href="https://wa.me/919746426444" target="_blank" rel="noopener">Chat on WhatsApp</a></li><li><a href="mailto:novogroupofcompany@gmail.com" style="overflow-wrap:anywhere">novogroupofcompany@gmail.com</a></li><li><a href="#quote">Request a quote</a></li><li><span>India &amp; UAE</span></li></ul>
+        <ul><li><a data-wa href="https://wa.me/919746426444" target="_blank" rel="noopener">Chat on WhatsApp</a></li><li><a href="mailto:novogroupofcompany@gmail.com" style="overflow-wrap:anywhere">novogroupofcompany@gmail.com</a></li><li><a href="#quote">Request a quote</a></li><li><span>India · UAE · Qatar</span></li></ul>
       </div>
     </div>
     <div class="legal"><span>© 2026 NovoRa · A NovoLearn company. All rights reserved.</span><span>Design. Build. Grow.</span></div>
@@ -546,12 +571,17 @@ footer{background:var(--navy);color:var(--on-navy-muted);padding-block:72px 28px
       <span><strong>UAE</strong><small>Message our UAE team</small></span>
       <svg class="go" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
     </a>
+    <a class="wa-opt" href="https://wa.me/97477137960" target="_blank" rel="noopener">
+      <svg class="flag" viewBox="0 0 45 30" aria-hidden="true"><rect width="45" height="30" fill="#8A1538"></rect><path d="M0 0H13L19 1.67L13 3.33L19 5L13 6.67L19 8.33L13 10L19 11.67L13 13.33L19 15L13 16.67L19 18.33L13 20L19 21.67L13 23.33L19 25L13 26.67L19 28.33L13 30H0Z" fill="#FFFFFF"></path></svg>
+      <span><strong>Qatar</strong><small>Message our Qatar team</small></span>
+      <svg class="go" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+    </a>
   </div>
 </dialog>
 
 <script>
 (function(){
-  // WhatsApp links: ask India or UAE first, then open that chat
+  // WhatsApp links: ask India, UAE or Qatar first, then open that chat
   var dlg=document.getElementById('waDlg');
   if(dlg&&typeof dlg.showModal==='function'){
     document.addEventListener('click',function(e){
@@ -575,7 +605,7 @@ footer{background:var(--navy);color:var(--on-navy-muted);padding-block:72px 28px
     if(v('q-biz'))lines.push('Business: '+v('q-biz'));
     lines.push('Country: '+v('q-country'),'Service: '+v('q-svc'));
     if(v('q-msg'))lines.push('Project: '+v('q-msg'));
-    var to=v('q-country')==='UAE'?'971505699693':'919746426444';
+    var to={UAE:'971505699693',Qatar:'97477137960'}[v('q-country')]||'919746426444';
     link.href='https://wa.me/'+to+'?text='+encodeURIComponent(lines.join('\n'));
     done.hidden=false;
   });
