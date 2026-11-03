@@ -338,17 +338,18 @@ details[open] summary::after{transform:rotate(45deg)}
 details p{color:var(--muted);padding-bottom:22px;margin-top:-4px;max-width:620px}
 
 /* footer */
-footer{background:var(--navy);color:var(--on-navy-muted);padding-block:72px 28px}
-.foot{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:40px}
+footer{background:var(--navy);color:var(--on-navy-muted);padding-block:36px 16px}
+footer .brand .wm{font-size:26px;margin-top:2px}
+.foot{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:28px}
 @media (max-width:900px){.foot{grid-template-columns:repeat(2,minmax(0,1fr))}.foot .about{grid-column:1/-1}}
 @media (max-width:480px){.foot{grid-template-columns:1fr}}
-.foot .about{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
-.foot .about p{max-width:340px;font-size:15.5px}
-.foot h4{color:var(--on-navy);font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px}
-.foot ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
-.foot ul a{color:var(--on-navy-muted);text-decoration:none;font-size:15px;font-weight:500;transition:color .15s ease}
+.foot .about{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.foot .about p{max-width:340px;font-size:14.5px}
+.foot h4{color:var(--on-navy);font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+.foot ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.foot ul a{color:var(--on-navy-muted);text-decoration:none;font-size:14.5px;font-weight:500;transition:color .15s ease}
 .foot ul a:hover{color:var(--teal-bright)}
-.legal{margin-top:56px;padding-top:22px;border-top:1px solid var(--navy-line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:13.5px}
+.legal{margin-top:28px;padding-top:14px;border-top:1px solid var(--navy-line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:13px}
 
 /* WhatsApp region chooser */
 .wa-dlg{border:0;padding:0;background:transparent;max-width:min(440px,calc(100vw - 32px));width:100%;color:var(--ink)}
