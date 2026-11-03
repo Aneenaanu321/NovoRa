@@ -194,31 +194,16 @@ header.open .menu-btn svg .x{display:block}
 @media (max-width:860px){.pack-grid{grid-template-columns:1fr}}
 .pack{display:flex;flex-direction:column;gap:14px;padding:28px 26px 26px;background:var(--bg);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow-sm);min-width:0}
 .pack h3{font-size:26px;font-weight:800}
-.pack-price{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:8px;row-gap:4px;font-size:34px;font-weight:800;letter-spacing:-.03em;line-height:1.05}
-.pack-price span{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--subtle)}
-.pack-price small{flex-basis:100%;font-size:15px;font-weight:600;color:var(--muted);letter-spacing:0;white-space:nowrap}
-.pack > p:not(.kicker):not(.pack-price){color:var(--muted);font-size:15.5px}
+.pack > p:not(.kicker){color:var(--muted);font-size:15.5px}
 .pack ul{list-style:none;margin:4px 0 8px;padding:16px 0 0;border-top:1px dashed var(--line-strong);display:flex;flex-direction:column;gap:8px;font-size:15px;font-weight:600}
 .pack li{display:flex;gap:10px;align-items:flex-start}
 .pack li::before{content:"✓";width:18px;height:18px;flex-shrink:0;margin-top:3px;border-radius:50%;background:var(--teal-soft);color:var(--teal-ink);font-size:11px;font-weight:800;line-height:1;display:inline-flex;align-items:center;justify-content:center}
 .pack .btn{margin-top:auto}
 .pack.featured{background:radial-gradient(circle at 0 0,rgba(79,217,203,.28),transparent 52%),var(--navy);border-color:transparent;color:var(--on-navy);box-shadow:var(--shadow-lg)}
 .pack.featured .kicker{color:var(--teal-bright)}
-.pack.featured .pack-price span,.pack.featured > p:not(.kicker):not(.pack-price),.pack.featured .pack-price small{color:var(--on-navy-muted)}
+.pack.featured > p:not(.kicker){color:var(--on-navy-muted)}
 .pack.featured ul{border-top-color:rgba(255,255,255,.16)}
 .pack.featured li::before{background:rgba(79,217,203,.16);color:var(--teal-bright)}
-.pack-note{margin-top:16px;color:var(--subtle);font-size:14.5px}
-.offer-split{margin-top:22px;display:grid;grid-template-columns:1.15fr .85fr;gap:20px}
-@media (max-width:800px){.offer-split{grid-template-columns:1fr}}
-.offer-panel{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:28px 28px 20px}
-.offer-panel h3{font-size:22px;font-weight:800;margin-bottom:6px}
-.offer-panel > p{color:var(--muted);font-size:15.5px}
-.times{list-style:none;margin:8px 0 0;padding:0}
-.times li{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid var(--line);font-weight:700}
-.times b{color:var(--teal-ink);font-weight:800;white-space:nowrap}
-.chips{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:16px 0 8px;padding:0}
-.chips li{padding:10px 16px;border-radius:999px;background:var(--bg);border:1px solid var(--line);font-weight:700;font-size:15px}
-
 /* why */
 .why-sec{background:var(--surface);border-block:1px solid var(--line)}
 .why-grid{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:18px}
@@ -257,44 +242,18 @@ header.open .menu-btn svg .x{display:block}
 
 /* work */
 .work-sec{background:var(--surface);border-block:1px solid var(--line)}
-.logo-band{display:flex;flex-direction:column;align-items:flex-start;gap:18px;margin-bottom:56px;padding-bottom:28px;border-bottom:1px solid var(--line)}
-.logo-band p{font-size:12.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--subtle)}
-.logos{display:flex;flex-wrap:wrap;align-items:center;gap:16px 34px;list-style:none;margin:0;padding:0}
-.logos a{color:color-mix(in srgb,var(--ink) 58%,transparent);font-weight:800;font-size:16px;letter-spacing:-.02em;line-height:1;white-space:nowrap;text-decoration:none}
-.logos li:nth-child(even) a{letter-spacing:.14em;font-size:13px;text-transform:uppercase}
-.logos a:hover{color:var(--ink)}
-@media (max-width:700px){.logo-band{margin-bottom:40px}.logos{gap:14px 22px}}
-.work-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
-@media (max-width:700px){.work-grid{grid-template-columns:1fr}}
+.work-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+@media (max-width:760px){.work-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.work-grid{grid-template-columns:1fr}}
 a.work{color:inherit;text-decoration:none}
 .work{background:var(--bg);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;min-width:0;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
 .work:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:var(--line-strong)}
 .work-shot{aspect-ratio:16/10;background:#E7EDF6;line-height:0}
 .work-shot img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
-.work-body{display:flex;flex-direction:column;gap:8px;padding:20px 22px 22px}
+.work-body{display:flex;flex-direction:column;gap:8px;padding:16px 16px 18px}
 .kicker{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-ink)}
-.work h3{font-size:20px;font-weight:800}
-.work p:last-child{color:var(--muted);font-size:15px}
-.work-sec .later{margin-top:88px}
-@media (max-width:700px){.work-sec .later{margin-top:56px}}
-.case-list{display:flex;flex-direction:column;gap:22px}
-.case{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);background:var(--bg);border:1px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--shadow-sm)}
-.case.flip .case-copy{order:-1}
-.case-shot{display:flex;align-items:center;background:#E7EDF6;min-height:100%}
-.case-shot img{width:100%;height:auto;display:block}
-.case-copy{padding:36px 36px 32px;display:flex;flex-direction:column;gap:14px;justify-content:center}
-.case-copy h3{font-size:clamp(26px,2.5vw,34px);font-weight:800}
-.beats{display:flex;flex-direction:column;gap:16px;margin:8px 0 0}
-.beats div{display:grid;grid-template-columns:88px minmax(0,1fr);gap:12px;align-items:baseline}
-.beats dt{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-ink)}
-.beats dd{margin:0;color:var(--muted);font-size:15.5px}
-.beats div:last-child dd{color:var(--ink);font-weight:600}
-@media (max-width:860px){
-  .case,.case.flip{grid-template-columns:1fr}
-  .case.flip .case-copy{order:0}
-  .case-copy{padding:28px 24px 30px}
-}
-@media (max-width:520px){.beats div{grid-template-columns:1fr;gap:4px}}
+.work h3{font-size:18px;font-weight:800}
+.work p:last-child{color:var(--muted);font-size:14.5px}
 .t-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 @media (max-width:900px){.t-grid{grid-template-columns:1fr}}
 .t-card{margin:0;background:var(--bg);border:1px solid var(--line);border-radius:22px;padding:28px 26px;display:flex;flex-direction:column;gap:22px;box-shadow:var(--shadow-sm);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
@@ -550,14 +509,13 @@ footer{background:var(--navy);color:var(--on-navy-muted);padding-block:72px 28px
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">Offers</span>
-      <h2>Starter packages, with a price and a timeline</h2>
-      <p>Three ways to begin. Each one lists what is included and where the price starts. We confirm the final quote before any work begins.</p>
+      <h2>Starter packages</h2>
+      <p>Three ways to begin. Each one lists what is included. We confirm the quote before any work begins.</p>
     </div>
     <div class="pack-grid">
       <article class="pack featured rv">
         <p class="kicker">Starter</p>
         <h3>Website</h3>
-        <p class="pack-price"><span>From</span> ₹25,000</p>
         <p>A business site that explains what you do and gives people a way to reach you.</p>
         <ul>
           <li>Up to 5 pages</li>
@@ -570,7 +528,6 @@ footer{background:var(--navy);color:var(--on-navy-muted);padding-block:72px 28px
       <article class="pack rv">
         <p class="kicker">Starter</p>
         <h3>Brand kit</h3>
-        <p class="pack-price"><span>From</span> ₹12,000</p>
         <p>A consistent look you can use on the website, cards, and social pages.</p>
         <ul>
           <li>Logo</li>
@@ -583,7 +540,6 @@ footer{background:var(--navy);color:var(--on-navy-muted);padding-block:72px 28px
       <article class="pack rv">
         <p class="kicker">Monthly</p>
         <h3>Social media</h3>
-        <p class="pack-price"><span>From</span> ₹15,000<small>per month</small></p>
         <p>Regular posts for Instagram and Facebook, written and designed for your brand.</p>
         <ul>
           <li>Content calendar</li>
@@ -593,31 +549,6 @@ footer{background:var(--navy);color:var(--on-navy-muted);padding-block:72px 28px
         </ul>
         <a class="btn btn-ink" href="#quote" data-pkg="Social media package">Get a quote</a>
       </article>
-    </div>
-    <p class="pack-note">Starting prices are in Indian rupees. UAE and Qatar projects are quoted in local currency before we start.</p>
-    <div class="offer-split">
-      <div class="offer-panel rv">
-        <h3>Typical timelines</h3>
-        <p>These are usual ranges once we have your content and the quote is confirmed.</p>
-        <ul class="times">
-          <li><span>Landing page</span><b>1–2 weeks</b></li>
-          <li><span>Business website</span><b>2–4 weeks</b></li>
-          <li><span>Brand kit</span><b>1–2 weeks</b></li>
-          <li><span>Social media setup</span><b>1 week</b></li>
-        </ul>
-      </div>
-      <div class="offer-panel rv">
-        <h3>Industries we work with</h3>
-        <p>Local businesses that need a clear site, a brand, or a steady social presence.</p>
-        <ul class="chips">
-          <li>Clinics</li>
-          <li>Restaurants</li>
-          <li>Startups</li>
-          <li>Education</li>
-          <li>Retail</li>
-          <li>Healthcare</li>
-        </ul>
-      </div>
     </div>
   </div>
 </section>
@@ -688,20 +619,10 @@ footer{background:var(--navy);color:var(--on-navy-muted);padding-block:72px 28px
 
 <section class="work-sec" id="work">
   <div class="wrap">
-    <div class="logo-band rv">
-      <p>Selected work</p>
-      <ul class="logos">
-        <li><a href="https://aurisso.com/" target="_blank" rel="noopener">Aurisso</a></li>
-        <li><a href="https://www.estrotech.in/" target="_blank" rel="noopener">Estro Tech</a></li>
-        <li><a href="https://onezippy.ai/" target="_blank" rel="noopener">OneZippy</a></li>
-        <li><a href="https://glossylounge.com/" target="_blank" rel="noopener">Glossy Lounge</a></li>
-      </ul>
-    </div>
-
     <div class="sec-head rv">
       <span class="eyebrow">Work</span>
       <h2>Recent projects</h2>
-      <p>Live sites. Each card shows the screen, the service, and what a visitor can do there now.</p>
+      <p>Each card shows the screen, the service, and what someone can do there.</p>
     </div>
     <div class="work-grid">
       <a class="work rv" href="https://aurisso.com/" target="_blank" rel="noopener">
@@ -744,40 +665,204 @@ footer{background:var(--navy);color:var(--on-navy-muted);padding-block:72px 28px
           <p>Shoppers in the UAE can browse the collection and order, with cash on delivery and next-day delivery in Dubai.</p>
         </div>
       </a>
-    </div>
-
-    <div class="sec-head later rv">
-      <span class="eyebrow">Case studies</span>
-      <h2>The problem, the build, the change</h2>
-      <p>Two of these sites, from what the business needed to what a visitor can do now.</p>
-    </div>
-    <div class="case-list">
-      <article class="case rv">
-        <div class="case-shot">
-          <img src="img/glossy.jpg" alt="Glossy Lounge shop homepage" width="1280" height="800">
+      <article class="work rv">
+        <div class="work-shot">
+          <img src="img/rfid-label.jpg" alt="RFID label design software with an EPC code ready to encode" width="1024" height="764">
         </div>
-        <div class="case-copy">
-          <p class="kicker">E-commerce store</p>
-          <h3>Glossy Lounge, Dubai</h3>
-          <dl class="beats">
-            <div><dt>Problem</dt><dd>The loungewear range needed a shop that sells the way customers in the UAE buy, with dirham prices, size help, and local delivery.</dd></div>
-            <div><dt>Built</dt><dd>An online store for women, men, and kids, with fabric details, size guides, cash on delivery, 14-day returns, and next-day delivery in Dubai.</dd></div>
-            <div><dt>Changed</dt><dd>A shopper can choose a piece, check the fit, and place an order from the site.</dd></div>
-          </dl>
+        <div class="work-body">
+          <p class="kicker">Desktop software</p>
+          <h3>RFID label design</h3>
+          <p>A label can be laid out, given an EPC code, and sent to print.</p>
         </div>
       </article>
-      <article class="case flip rv">
-        <div class="case-shot">
-          <img src="img/estrotech.jpg" alt="Estro Tech product page for RobAd" width="1280" height="800">
+      <article class="work rv">
+        <div class="work-shot">
+          <img src="img/id-cloud.jpg" alt="iD Cloud store overview with approval, accuracy, and count charts" width="1024" height="650">
         </div>
-        <div class="case-copy">
+        <div class="work-body">
+          <p class="kicker">Web app</p>
+          <h3>iD Cloud</h3>
+          <p>A store team can see which counts are approved, how accurate they are, and how far the count has got.</p>
+        </div>
+      </article>
+      <article class="work rv">
+        <div class="work-shot">
+          <img src="img/vendease.jpg" alt="VendEase transactions screen with a sale and a purchase" width="1024" height="613">
+        </div>
+        <div class="work-body">
+          <p class="kicker">Web app</p>
+          <h3>VendEase</h3>
+          <p>Staff can review sales and purchases, then open one to refund it or print the receipt.</p>
+        </div>
+      </article>
+      <article class="work rv">
+        <div class="work-shot">
+          <img src="img/industryos.jpg" alt="IndustryOS device management dashboard for connected machines" width="1024" height="768">
+        </div>
+        <div class="work-body">
+          <p class="kicker">Web app</p>
+          <h3>IndustryOS</h3>
+          <p>A team can see which machines are online, warning, or offline, and open a device.</p>
+        </div>
+      </article>
+      <article class="work rv">
+        <div class="work-shot">
+          <img src="img/tamr.jpg" alt="Tamr product master list with verified records and possible duplicates" width="1024" height="553">
+        </div>
+        <div class="work-body">
+          <p class="kicker">Web app</p>
+          <h3>Tamr</h3>
+          <p>A curator can browse product records, see what is waiting for review, and open a master record.</p>
+        </div>
+      </article>
+      <article class="work rv">
+        <div class="work-shot">
+          <img src="img/quotasight.jpg" alt="QuotaSight sales overview with revenue trend and pipeline" width="1024" height="767">
+        </div>
+        <div class="work-body">
+          <p class="kicker">Web app</p>
+          <h3>QuotaSight</h3>
+          <p>A sales lead can see revenue against target, the open pipeline, and how each rep is doing.</p>
+        </div>
+      </article>
+      <article class="work rv">
+        <div class="work-shot">
+          <img src="img/metricflow.jpg" alt="MetricFlow marketing dashboard with spend, conversions, and campaign score" width="1024" height="767">
+        </div>
+        <div class="work-body">
+          <p class="kicker">Web app</p>
+          <h3>MetricFlow</h3>
+          <p>A marketer can see spend, conversions, and which campaigns are performing.</p>
+        </div>
+      </article>
+      <article class="work rv">
+        <div class="work-shot">
+          <img src="img/loss-prevention.jpg" alt="Loss prevention dashboard comparing returns, voids, overrides, and discounts" width="1024" height="576">
+        </div>
+        <div class="work-body">
+          <p class="kicker">Web app</p>
+          <h3>Loss prevention</h3>
+          <p>A store lead can compare returns, voids, price overrides, and discounts by location.</p>
+        </div>
+      </article>
+      <article class="work rv">
+        <div class="work-shot">
+          <img src="img/olr.jpg" alt="OLR screen listing stores and registers with health indicators" width="1024" height="533">
+        </div>
+        <div class="work-body">
+          <p class="kicker">Web app</p>
+          <h3>OLR</h3>
+          <p>An operator can see which stores and registers are open, and whether a register is healthy.</p>
+        </div>
+      </article>
+      <article class="work rv">
+        <div class="work-shot">
+          <img src="img/mealpe.jpg" alt="MealPe mess dashboard on a laptop and the meal manager on a phone" width="1024" height="576">
+        </div>
+        <div class="work-body">
+          <p class="kicker">Web app</p>
+          <h3>MealPe</h3>
+          <p>A mess team can see today's plate counts, and a guest can mark a meal from the phone.</p>
+        </div>
+      </article>
+      <article class="work rv">
+        <div class="work-shot">
+          <img src="img/linen-inventory.jpg" alt="Hotel linen with an RFID tag beside a scanner and an inventory screen" width="1024" height="768">
+        </div>
+        <div class="work-body">
+          <p class="kicker">RFID system</p>
+          <h3>Linen inventory</h3>
+          <p>Staff can scan hotel linen and see what is in stock, in use, or in the laundry.</p>
+        </div>
+      </article>
+      <article class="work rv">
+        <div class="work-shot">
+          <img src="img/rfid-desktop.jpg" alt="123RFID Desktop antenna port settings for a connected reader" width="1024" height="645">
+        </div>
+        <div class="work-body">
+          <p class="kicker">Desktop software</p>
+          <h3>123RFID Desktop</h3>
+          <p>A technician can set antenna power and read mode for a connected RFID reader.</p>
+        </div>
+      </article>
+      <article class="work rv">
+        <div class="work-shot">
+          <img src="img/store-floor.jpg" alt="Store floor view with stock alerts, a heat map, and shopper paths" width="1024" height="576">
+        </div>
+        <div class="work-body">
+          <p class="kicker">Web app</p>
+          <h3>Store floor</h3>
+          <p>A retailer can see coverage, stock gaps, and where shoppers move through the store.</p>
+        </div>
+      </article>
+      <article class="work rv">
+        <div class="work-shot">
+          <img src="img/business-overview.jpg" alt="Business overview with revenue, orders, and revenue by channel" width="1024" height="576">
+        </div>
+        <div class="work-body">
+          <p class="kicker">Web app</p>
+          <h3>Business overview</h3>
+          <p>A team can see revenue, orders, and which channel the sales came from.</p>
+        </div>
+      </article>
+      <article class="work rv">
+        <div class="work-shot">
+          <img src="img/meditrack.jpg" alt="MediTrack medications screen with stock levels and items to restock" width="1024" height="768">
+        </div>
+        <div class="work-body">
+          <p class="kicker">Web app</p>
+          <h3>MediTrack</h3>
+          <p>Staff can see medicines in stock, what needs a restock, and which items are out.</p>
+        </div>
+      </article>
+      <article class="work rv">
+        <div class="work-shot">
+          <img src="img/xemelgo.jpg" alt="Xemelgo inventory on a laptop and an audit screen on a phone" width="1024" height="652">
+        </div>
+        <div class="work-body">
+          <p class="kicker">Web app</p>
+          <h3>Xemelgo</h3>
+          <p>A team can audit stock on a phone while the facility inventory stays open on the desktop.</p>
+        </div>
+      </article>
+      <article class="work rv">
+        <div class="work-shot">
+          <img src="img/bms.jpg" alt="Building management dashboard with floor plan, occupancy, and CO2 levels" width="1024" height="716">
+        </div>
+        <div class="work-body">
+          <p class="kicker">Web app</p>
+          <h3>Building management</h3>
+          <p>A facilities team can see room occupancy, lighting, and CO₂ from the building sensors.</p>
+        </div>
+      </article>
+      <a class="work rv" href="https://ibtechintl.com/" target="_blank" rel="noopener">
+        <div class="work-shot">
+          <img src="img/ibtech.jpg" alt="ibTech homepage, Industry Solutions for manufacturing and packaging" width="1440" height="900">
+        </div>
+        <div class="work-body">
           <p class="kicker">Website development</p>
-          <h3>Estro Tech, India</h3>
-          <dl class="beats">
-            <div><dt>Problem</dt><dd>RobAd is a device on a shop floor. Brands needed to understand it before they would ask for a demo.</dd></div>
-            <div><dt>Built</dt><dd>A product site with the device, what it changes in a store, a published store result, notes from retailers, and a demo request.</dd></div>
-            <div><dt>Changed</dt><dd>A brand can read the product and reach the team from the same page.</dd></div>
-          </dl>
+          <h3>ibTech</h3>
+          <p>Buyers can see the retail and industrial solutions and get in touch.</p>
+        </div>
+      </a>
+      <article class="work rv">
+        <div class="work-shot">
+          <img src="img/perfume-planet.jpg" alt="Perfume Planet logo, a gold flame" width="1440" height="900">
+        </div>
+        <div class="work-body">
+          <p class="kicker">Website</p>
+          <h3>Perfume Planet</h3>
+          <p>Shoppers in Dubai can browse the fragrance collection and choose a scent.</p>
+        </div>
+      </article>
+      <article class="work rv">
+        <div class="work-shot">
+          <img src="img/phoenix-ledger.jpg" alt="Phoenix Ledger logo, a blue chart and arrow" width="1440" height="900">
+        </div>
+        <div class="work-body">
+          <p class="kicker">Website</p>
+          <h3>Phoenix Ledger</h3>
+          <p>A business in Dubai can see the accounting, bookkeeping, and tax services and get in touch.</p>
         </div>
       </article>
     </div>
@@ -845,7 +930,7 @@ footer{background:var(--navy);color:var(--on-navy-muted);padding-block:72px 28px
       <p>Can't find your answer? <a data-wa href="https://wa.me/919746426444" target="_blank" rel="noopener">Message us on WhatsApp</a>.</p>
     </div>
     <div class="faq-list">
-      <details class="rv"><summary>How much does a website cost?</summary><p>A starter website begins at ₹25,000 for up to five pages. The final price depends on the pages and features, and we send a clear quote before any work starts. See the <a href="#offers">starter packages</a>.</p></details>
+      <details class="rv"><summary>How much does a website cost?</summary><p>It depends on the pages and features. We send a clear quote before any work starts. See the <a href="#offers">starter packages</a>.</p></details>
       <details class="rv"><summary>How long does a project take?</summary><p>A landing page usually takes 1–2 weeks. A business website takes 2–4 weeks, and a brand kit takes 1–2 weeks. We confirm the timeline with your quote.</p></details>
       <details class="rv"><summary>Do you work with clients outside India?</summary><p>Yes. We work with clients in India, the UAE, Qatar and other countries, fully online.</p></details>
       <details class="rv"><summary>Can I get design, website and social media together?</summary><p>Yes. Many clients combine services into one package, such as logo, website and social media handling.</p></details>
